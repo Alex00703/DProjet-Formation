@@ -1,0 +1,66 @@
+input[type=text], input[type=password], input[type=email]{
+    position: relative;
+    top: 30px;
+    width: 65%;
+    margin: 10px;
+    padding: 15px 20px;
+    border: 2px solid rgb(151, 41, 41);
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=submit]{
+    background-color: rgb(51, 51, 51);
+    color: white;
+    position: relative;
+    top: 30px;
+    margin: 10px;
+    width: 65%;
+    padding: 15px 20px;
+    border: 1px solid rgb(51, 51, 51);
+    border-radius: 4px;
+    box-sizing: border-box;
+    transition: 0.4s;
+    cursor: pointer;
+}
+
+input[type=submit]:hover{
+    transition: 0.2s;
+    background-color: rgb(151, 41, 41);
+    border: 1px solid rgb(151, 41, 41);
+}
+
+#register-form{
+    width: 25%;
+    height: 490px;
+    background-color: rgb(32, 32, 32);
+    margin: 0 auto;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 1px #000000;
+    border-top: 5px solid rgb(151, 41, 41);
+    border-bottom: 5px solid rgb(151, 41, 41);
+    text-align: center;
+}
+
+#login-form{
+    width: 25%;
+    height: 350px;
+    background-color: rgb(32, 32, 32);
+    margin: 0 auto;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 1px #000000;
+    border-top: 5px solid rgb(151, 41, 41);
+    border-bottom: 5px solid rgb(151, 41, 41);
+    text-align: center;
+}
+
+.error{
+    position: relative;
+    top: 10px;
+    width: 90%;
+    margin: 10px auto;
+    padding: 10px;
+    background-color: rgb(151, 41, 41);
+    color: rgb(255, 255, 255);
+    border-radius: 5px;
+}

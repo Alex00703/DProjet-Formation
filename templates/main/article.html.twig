@@ -1,0 +1,12 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+
+    <div id="article-container">
+        <div id="title-article"><h1>{{ article.getTitle()|raw }}</h1></div>
+        <div id="content-article"><p>{{ article.getContent()|raw }}</p></div>
+        <div id="date-article"><p>{{ article.getDate()|date("d/m/Y") }}</p></div>
+        
+    </div>
+
+{% endblock %}

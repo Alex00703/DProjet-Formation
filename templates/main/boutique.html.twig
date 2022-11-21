@@ -1,0 +1,51 @@
+{% extends "base.html.twig" %}
+
+{% block steelsheets %}<link href="{{ asset('assets/css/boutique.css') }}" rel="stylesheet"/>{% endblock %}
+
+{% block body %}
+    <div style="display: flex;">
+        <div id="categories-container">
+            <h1 id="categories-title">Boutique</h1>
+            <div id="player-infos-container">
+                <img id="avatar" src="{{ asset('assets/img/avatars/default_avatar.png') }}">
+                <div id="text-infos">
+                    <p id="name"> {{ app.user.userIdentifier }}</p>
+                    <p id="rank">{{ role }}</p>
+                    <p id="coins">{{ coins }} <img id="img-coins" src="{{ asset('assets/img/coins.png') }}"></p>
+                </div>
+            </div>
+            <a href="" class="category-btn"><p>Grades</p></a>
+            <a href="" class="category-btn"><p>Kits</p></a>
+            <a href="" class="category-btn"><p>Spawners</p></a>
+            <a href="" class="category-btn"><p>Clés</p></a>
+        </div>
+
+        <div id="items-container">
+            <h1 style="color: white; margin: 0 auto;">Grades</h1>
+
+            <div id="items">
+                <div class="item">
+                    <p class="item-title">Grade Samouraï</p>
+                    <p class="item-price">150</p>
+                </div>
+
+                <div class="item">
+                    <p class="item-title">Grade Samouraï</p>
+                    <p class="item-price">150</p>
+                </div>
+
+                <div class="item">
+                    <p class="item-title">Grade Samouraï</p>
+                    <p class="item-price">150</p>
+                </div>
+
+                <div class="item">
+                    <p class="item-title">Grade Samouraï</p>
+                    <p class="item-price">150</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+{% endblock %}

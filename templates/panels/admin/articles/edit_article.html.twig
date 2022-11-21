@@ -1,0 +1,24 @@
+{% extends 'panels/admin/admin_base.html.twig' %}
+
+{% block body %}  
+    <div class="content-form">
+        {{ form_start(deleteForm) }}
+        {{ form_end(deleteForm) }}
+
+        <a href="{{ path('admin.articles') }}" class="top-right-button">Retour</a>
+
+        <div id="header-articles">
+            <h1 style="padding-top: 20px;">Modifier l'article</h1>
+        </div>
+
+        {{ form_start(form) }}
+            <p class="label">Titre</p>
+            {{ form_widget(form.title) }}
+            <p class="label">Contenu</p>
+            {{ form_widget(form.content) }}
+            <p class="label">Image</p>
+            {{ form_widget(form.image) }}
+            <input type="submit" value="Modifier l'article">
+        {{ form_end(form) }}
+    </div>
+{% endblock  %}

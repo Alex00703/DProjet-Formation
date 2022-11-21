@@ -1,0 +1,32 @@
+{% extends 'panels/admin/admin_base.html.twig' %}
+
+{% block body %}
+    
+    <div class="content-form">
+        <a href="{{ path('admin.users') }}" class="top-right-button">Retour</a>
+
+        <h1 style="padding-top: 20px;">Modifier l'utilisateur</h1>
+
+        <div style="position: relative;">
+            {{ form_start(editForm) }}
+
+                <p class="label">Nom</p>
+                {{ form_widget(editForm.name) }}
+
+                <p class="label">E-mail</p>
+                {{ form_widget(editForm.email) }}
+
+                <p class="label">Coins</p>
+                {{ form_widget(editForm.coins) }}
+
+                <p class="label">Role</p>
+                {{ form_widget(editForm.role) }}
+                <input type="submit" value="Modifier l'utilisateur">
+
+            {{ form_end(editForm) }}
+        </div>
+
+
+    </div>
+
+{% endblock %}

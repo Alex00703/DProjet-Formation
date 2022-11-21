@@ -1,0 +1,33 @@
+{% extends 'panels/admin/admin_base.html.twig' %}
+
+{% block body %}
+    
+    <div class="content-form">
+        {{ form_start(deleteForm) }}
+        {{ form_end(deleteForm) }}
+
+        <a href="{{ path('admin.roles') }}" class="top-right-button">Retour</a>
+
+        <h1 style="padding-top: 20px;">Modifier le role</h1>
+
+        <div style="position: relative;">
+            {{ form_start(editForm) }}
+
+                <p class="label">Role</p>
+                {{ form_widget(editForm.role) }}
+
+                <p class="label">Nom</p>
+                {{ form_widget(editForm.name) }}
+
+                <p class="label">Permissions</p>
+                {{ form_widget(editForm.permissions) }}
+
+                <input type="submit" value="Modifier le role">
+
+            {{ form_end(editForm) }}
+        </div>
+
+
+    </div>
+
+{% endblock %}

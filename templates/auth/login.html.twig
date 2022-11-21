@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Silezia - Login{% endblock %}
+{% block steelsheets %} <link href="{{ asset('assets/css/auth.css') }}" rel="stylesheet"/> {% endblock %}
+
+{% block body %}
+    <form id="login-form" method="post">
+        {% if error %}
+            <div class="error">
+                {{ error.messageKey|trans(error.messageData, 'security') }}
+            </div>
+        {% endif %}
+
+        <p style="font-size: 130%; color: #FFFFFF; position:relative; top: 20px;">CONNEXION</p>
+        <input type="text" value="{{ last_username }}" name="username" id="inputUsername" autocomplete="username" placeholder="Pseudo" required autofocus>
+        <input type="password" name="password" id="inputPassword" autocomplete="current-password" placeholder="Password" required>
+        <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+        <input class="btn btn-lg btn-primary" type="submit" value="CONNEXION">
+    </form>
+{% endblock %}

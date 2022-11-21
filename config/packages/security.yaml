@@ -1,0 +1,21 @@
+security:
+    enable_authenticator_manager: true
+    password_hashers:
+        App\Entity\Users:
+            algorithm: auto
+
+    providers:
+        # used to reload user from session & other features (e.g. switch_user)
+        app_user_provider:
+            entity:
+                class: App\Entity\Users
+                property: username
+
+    firewalls:
+        main:
+            lazy: true
+            custom_authenticator: App\Security\AppAuthenticator
+            logout:
+                path: app_logout
+                # where to redirect after logout
+                # target: app_any_route

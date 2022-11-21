@@ -1,0 +1,71 @@
+index:
+    path: /
+    controller: App\Controller\IndexController::index
+
+shop:
+    path: /shop
+    controller: App\Controller\ShopController::shop
+
+vote:
+    path: /vote
+    controller: App\Controller\VoteController::vote
+
+forum:
+    path: /forum
+    controller: App\Controller\ForumController::forum
+
+support:
+    path: /support
+    controller: App\Controller\SupportController::support
+
+launcher:
+    path: /launcher
+    controller: App\Controller\LauncherController::launcher
+
+account:
+    path: /account
+    controller: App\Controller\UserPanelController::userPanel
+
+admin:
+    path: /admin
+    controller: App\Controller\AdminController:admin
+
+admin.articles:
+    path: /admin/articles
+    controller: App\Controller\AdminController:articles
+
+admin.create_article:
+    path: /admin/articles/new
+    controller: App\Controller\AdminController:create_article
+
+admin.edit_article:
+    path: /admin/articles/edit/{id}
+    controller: App\Controller\AdminController:edit_article
+
+article:
+    path: /article/{id}
+    controller: App\Controller\IndexController:article
+
+admin.users:
+    path: /admin/users
+    controller: App\Controller\AdminController:users
+
+admin.edit_user:
+    path: /admin/users/edit/{id}
+    controller: App\Controller\AdminController:edit_user
+
+admin.roles:
+    path: /admin/roles
+    controller: App\Controller\AdminController:roles
+
+admin.create_role:
+    path: /admin/roles/new
+    controller: App\Controller\AdminController:create_role
+
+admin.edit_role:
+    path: /admin/roles/edit/{id}
+    controller: App\Controller\AdminController:edit_role
+
+boutique:
+    path: /boutique
+    controller: App\Controller\BoutiqueController:boutique

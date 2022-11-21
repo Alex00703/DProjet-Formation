@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block steelsheets %}
+    <link href="{{ asset('assets/css/account.css') }}" rel="stylesheet"/>
+{% endblock %}
+
+{% block body %}
+
+    {% if error %}
+        <div id="error">
+            <p>{{ error }}</p>
+        </div>
+    {% endif %}
+
+    {% if success %}
+        <div id="success">
+            <p>{{ success }}</p>
+        </div>
+    {% endif %}
+
+    <a href="{{ path('admin') }}" id="admin-button">Panel Administrateur</a>
+    <div class="all-content">
+        <div class="top-content">
+            <img class="avatar" src="{{ asset('assets/img/avatars/default_avatar.png') }}">
+            <p class="name"> {{ app.user.userIdentifier }} </p>
+            <p class="rank">{{ role }}</p>
+            <img class="img-coins" src="{{ asset('assets/img/coins.png') }}">
+            <p class="coins">{{ coins }}</p>
+        </div>
+        <div class="bottom-content">
+             <form method="post" action="">
+                 <p class="label">Activer l'A2F</p>
+                <img src="<?php echo $link ?>" style="width: 175px; height:175px; position:relative; top:-105px; left: 90px;">
+                <input type="text" name="code" placeholder="Code (Google Auth)" required>
+                <input type="submit" name="submitA2fOn" value="Confirmer">
+            </form>
+                
+            {{ form_start(form) }}
+            <p class="label">Modifier son mot de passe </p>
+
+                {{ form_widget(form.oldPassword) }}
+                {{ form_widget(form.newPassword) }}
+                {{ form_widget(form.confirmNewPassword) }}
+                 <input type="submit" value="Confirmer">
+            {{ form_end(form) }}
+
+        </div>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <aside>
+        <p class="stats-title">Statistiques</p>
+        <p><span style="font-size: 175%;">{{ totalUsers }}</span> JOUEURS INSCRITS</p>
+        <p style="margin-top: 15px;"><span style="font-size: 175%;">0</span> JOUEURS CONNECTÉS</p>
+        <iframe style="position:relative; top:100px;" src="https://discord.com/widget?id=695214361198723132&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+    </aside>
+    
+    <div id="articles-container">
+        {% for article in articles %}
+            
+            <a href="{{ path('article', {'id': article.getId() })}}" style="margin: 20px;">
+                <div class="article" style="background-image: url('{{ article.getImage() }}');"></div>
+            </a>
+        {% endfor %}
+    </div>
+{% endblock %}

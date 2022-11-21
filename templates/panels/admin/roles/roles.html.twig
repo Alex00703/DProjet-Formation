@@ -1,0 +1,38 @@
+{% extends 'panels/admin/admin_base.html.twig' %}
+
+{% block body %}
+    
+    <div class="content-form">
+
+        <a href="{{ path('admin.create_role') }}" class="top-right-button">Nouveau role</a>
+
+
+        <h1 style="padding-top: 20px;">Roles</h1>
+        <div id="informations">
+            <p>ID</p>
+            <p>Role</p>
+            <p>Nom</p>
+            <p>Permissions</p>
+        </div>
+        <div id="module-container">
+            {% for role in roles %}
+                <a href="{{ path('admin.edit_role', {'id': role.id })}}" style="text-decoration: none; color: black;">
+                    <div class="role">
+                        <p>{{ role.id }}</p>
+                        <p>{{ role.role }}</p>
+                        <p>{{ role.displayname }}</p>
+                        <div class="perm-show">
+                            <p>[VOIR]</p>
+                            <div class="permissions-list">
+                                {% for perm in role.permissions %}
+                                    <p>{{perm}}</p>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            {% endfor %}
+        </div>
+    </div>
+
+{% endblock %}

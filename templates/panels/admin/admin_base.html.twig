@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{% block title %}Silezia{% endblock title %}</title>
+        <link href="{{ asset('assets/css/admin/styles.css') }}" rel="stylesheet"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+        {% block steelsheets %}{% endblock steelsheets %}
+    </head>
+    <body>
+        <nav id="side-navbar">
+            <ul>      
+                <h1 id="title-admin">Silezia - Admin</h1>
+
+                <div style="position: relative; top: 100px;">
+                    <div class="separator"></div>
+                    <p id="menu">MENU</p>
+                    <li><a href=""><i class="fa fa-home"></i> Accueil</a></li>
+                    <li><a href=""><i class="fa fa-pie-chart"></i> Statistiques</a></li>
+                    <li><a href=""><i class="fa fa-shopping-cart"></i> Boutique</a></li>
+                    <li><a href="{{ path('admin.articles') }}"><i class="fa fa-regular fa-comment"></i> Articles</a></li>
+                    <li><a href="{{ path('admin.users') }}"><i class="fa fa-duotone fa-users"></i> Utilisateurs</a></li>
+                    <li><a href="{{ path('admin.roles') }}"><i class="fa fa-shield"></i> Roles</a></li>
+                    <li><a href=""><i class="fa fa-brands fa-youtube"></i> Partenaires</a></li>
+                    <li><a href=""><i class="fa fa-solid fa-ticket"></i> Support</a></li>
+                    <li><a href=""><i class="fa fa-solid fa-gears"></i> Paramètres</a></li>
+                </div>
+            </ul>
+        </nav>
+        
+        <div style="margin-left: 290px;">
+            {#
+            <div id="welcome-box">
+                <h1 id="welcome-text">Bienvenue, {{ app.user.userIdentifier }}</h1>
+                <h3 id="welcome-text-desc">Vous pouvez gérer le site via ce panel</h3>
+
+            </div>
+            #}
+            {% block body %}{% endblock body %}
+        </div>
+    </body>
+</html>

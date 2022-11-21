@@ -1,0 +1,27 @@
+{% extends 'panels/admin/admin_base.html.twig' %}
+
+{% block body %}  
+    <div class="content-form">
+        <a href="{{ path('admin.create_article') }}" class="top-right-button">Nouvel article</a>
+
+        <h1 style="padding-top: 20px;">Articles</h1>
+        <div id="informations">
+            <p>ID</p>
+            <p>Titre</p>
+            <p>Date</p>
+        </div>
+        
+        <div id="module-container">
+            {% for article in articles %}
+                <a href="{{ path('admin.edit_article', {'id': article.id })}}" style="text-decoration: none; color: black;">
+                    <div class="article">
+                        <p>{{ article.id }}</p>
+                        <p>{{ article.title }}</p>
+                        <p>{{ article.date|date("d/m/Y") }}</p>
+                    </div>
+                </a>
+            {% endfor %}
+        </div>
+    </div>
+    
+{% endblock  %}

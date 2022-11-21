@@ -1,0 +1,29 @@
+{% extends 'panels/admin/admin_base.html.twig' %}
+
+{% block body %}
+    
+    <div class="content-form">
+        <h1 style="padding-top: 20px;">Utilisateurs</h1>
+        <div id="informations">
+            <p>ID</p>
+            <p>Nom</p>
+            <p>Role</p>
+            <p>E-mail</p>
+            <p>Coins</p>
+        </div>
+        <div id="module-container">
+            {% for user in users %}
+                <a href="{{ path('admin.edit_user', {'id': user.id })}}" style="text-decoration: none; color: black;">
+                    <div class="user">
+                        <p>{{ user.id }}</p>
+                        <p>{{ user.username }}</p>
+                        <p>{{ user.role }}</p>
+                        <p>{{ user.email }}</p>
+                        <p>{{ user.coins }}</p>
+                    </div>
+                </a>
+            {% endfor %}
+        </div>
+    </div>
+
+{% endblock %}

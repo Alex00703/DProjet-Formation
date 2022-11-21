@@ -1,0 +1,30 @@
+{% extends 'panels/admin/admin_base.html.twig' %}
+
+{% block body %}
+    
+    <div class="content-form">
+        <a href="{{ path('admin.roles') }}" class="top-right-button">Retour</a>
+
+        <h1 style="padding-top: 20px;">Nouveau role</h1>
+
+        <div style="position: relative;">
+            {{ form_start(createForm) }}
+
+                <p class="label">Role</p>
+                {{ form_widget(createForm.role) }}
+
+                <p class="label">Nom</p>
+                {{ form_widget(createForm.name) }}
+
+                <p class="label">Permissions</p>
+                {{ form_widget(createForm.permissions) }}
+
+                <input type="submit" value="Créer le role">
+
+            {{ form_end(createForm) }}
+        </div>
+
+
+    </div>
+
+{% endblock %}
